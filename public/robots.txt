@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://spotifyloader.com/
+
+# Sitemaps
+Sitemap: https://spotifyloader.com/sitemap.xml
