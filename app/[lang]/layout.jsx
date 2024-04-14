@@ -42,6 +42,7 @@ export default async function RootLayout({ children, params }) {
   const t = await getDictionary(getLang(params.lang));
   return (
     <html lang={t.lang}>
+      <GoogleTagManager gtmId="GTM-NRP8VP5J" />
       <body
         className={
           poppins.className +
