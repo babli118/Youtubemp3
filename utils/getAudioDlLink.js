@@ -1,10 +1,7 @@
 import { Bounce, Slide, ToastContainer, toast } from "react-toastify";
 import { startDownload } from "../utils";
 
-const getAudioDlLink = async (format) => {
-  const url =
-    "https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=youtu.be&t=30s";
-
+const getAudioDlLink = async (url) => {
   let videoId;
   const regExp =
     /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:shorts|music|watch\?[^&]*v=|embed\/|v\/)|youtu\.be\/)([\w-]{11})/i;

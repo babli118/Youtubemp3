@@ -13,7 +13,7 @@ const VideoCard = ({ videoInfo, url, mp3, thumbnailUrl }) => {
   const [isThumbnailLoaded, setIsThumbnailLoaded] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const getVideoLink = async (url, quality) => {
+  const getVideoLink = async (url) => {
     try {
       const dlLinkInfo = await getVideoDlLink(url, quality);
 
