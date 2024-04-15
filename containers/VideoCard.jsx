@@ -142,14 +142,13 @@ const VideoCard = ({ videoInfo, url, mp3, thumbnailUrl }) => {
             height: "50px",
             width: "160px",
             fontWeight: "500",
-            backgroundColor: "#3F83F8",
           }}
           onClick={async () => {
             setLoadingMp3(true);
             await getAudioLink(url);
             setLoadingMp3(false);
           }}
-          className="bg-[#18E86B] flex mt-2 w-[300px]  justify-center items-center gap-2 text-white text-center relative hover:scale-105 px-4  py-3 transition-all text-base font-semibold   rounded-md"
+          className="bg-primary1 flex mt-2 w-[300px]  justify-center items-center gap-2 text-white text-center relative hover:scale-105 px-4  py-3 transition-all text-base font-semibold   rounded-md"
         >
           {loadingMp3 ? (
             <TailSpin color="#fff" height={30} width={30} />
@@ -160,13 +159,18 @@ const VideoCard = ({ videoInfo, url, mp3, thumbnailUrl }) => {
           )}
         </button>
         <button
-          style={{ height: "50px", width: "160px", fontWeight: "500" }}
+          style={{
+            height: "50px",
+            width: "160px",
+            fontWeight: "500",
+            backgroundColor: "#3F83F8",
+          }}
           onClick={async () => {
             setLoadingMp4(true);
             await getVideoLink(url, 720);
             setLoadingMp4(false);
           }}
-          className="bg-primary1 flex mt-2 justify-center items-center gap-2 text-white text-center relative hover:scale-105 px-4  py-3 transition-all text-base font-semibold    rounded-md"
+          className=" flex mt-2 justify-center items-center gap-2 text-white text-center relative hover:scale-105 px-4  py-3 transition-all text-base font-semibold    rounded-md"
         >
           {loadingMp4 ? (
             <TailSpin color="#fff" height={30} width={30} />

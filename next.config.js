@@ -7,6 +7,6 @@ const withPWA = require("next-pwa")({
 
 module.exports = withPWA({
   images: {
-    domains: ["i.ytimg.com", "yt3.ggpht.com"],
+    domains: ["i.ytimg.com", "yt3.ggpht.com", "img.youtube.com"],
   },
 });

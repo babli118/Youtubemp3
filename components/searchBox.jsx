@@ -64,15 +64,10 @@ const SearchBox = ({ mp3, dl, pholder }) => {
         document.activeElement.blur();
         const videoInfo = await getVideoInfo(pastedContent);
         const video = videoInfo.video;
-        for (let i = 4; i >= 0; i--) {
-          if (video.thumbnails[i]) {
-            const url = video.thumbnails[i].url.startsWith("//")
-              ? `https:${video.thumbnails[i].url}`
-              : video.thumbnails[i].url;
-            setThumbnailUrl(url);
-            break;
-          }
-        }
+        const id = regexYTvid(pastedContent);
+        const url = `https://i.ytimg.com/vi/${id}/mqdefault.jpg`;
+
+        setThumbnailUrl(url);
 
         setVideoInfo(videoInfo);
         setLoading(false); // Set loading to false when download is complete
@@ -114,16 +109,9 @@ const SearchBox = ({ mp3, dl, pholder }) => {
       setSearchVideos("");
       document.activeElement.blur();
       const videoInfo = await getVideoInfo(url);
-      const video = videoInfo.video;
-      for (let i = 4; i >= 0; i--) {
-        if (video.thumbnails[i]) {
-          const url = video.thumbnails[i].url.startsWith("//")
-            ? `https:${video.thumbnails[i].url}`
-            : video.thumbnails[i].url;
-          setThumbnailUrl(url);
-          break;
-        }
-      }
+      const id = regexYTvid(url);
+      const thumbUrl = `https://i.ytimg.com/vi/${id}/mqdefault.jpg`;
+      setThumbnailUrl(thumbUrl);
 
       setVideoInfo(videoInfo);
       setVideoUrl(url);
@@ -254,15 +242,22 @@ const SearchBox = ({ mp3, dl, pholder }) => {
                         onClick={() => {
                           setInputValue("");
                         }}
-                        className="absolute bg-grey right-0 top-3 text-text text-xl flex justify-center items-center cursor-pointer rounded-md mr-4 w-10 h-8"
+                        className="absolute hover:scale-105 transition-all bg-grey right-0 top-3 text-text text-xl flex justify-center items-center cursor-pointer rounded-md mr-4 w-10 h-8"
                       >
                         <RxCross2 />
                       </div>
                     )}
                   </div>
                   <div className="flex">
-                    <button className="bg-primary1 w-full text-white relative mt-4 sm:mt-0 hover:scale-105    transition-all text-base text-black font-semibold px-6 py-3 sm:ml-2 rounded-md">
-                      {dl}
+                    <button
+                      disabled={loading}
+                      className="bg-primary1 w-full text-white relative mt-4
+                      sm:mt-0 hover:scale-105 transition-all text-base
+                      text-black font-semibold px-6 py-3 sm:ml-2 rounded-md disabled:bg-primary1/60 disabled:hover:scale "
+                    >
+                      {loading
+                        ? "Hmm..." // Todo: Change loading text
+                        : "Search"}{" "}
                     </button>
                   </div>
                 </div>

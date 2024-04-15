@@ -3,9 +3,7 @@ import React from "react";
 import DisplayDuration from "../utils/DurationDisplay.js";
 
 const SearchVideoCard = ({ video, setVideo, scrollToSong }) => {
-  const thumbnailUrl = video.thumbnails[0].url.startsWith("//")
-    ? `https:${video.thumbnails[0].url}`
-    : video.thumbnails[0].url;
+  const thumbnailUrl = `https://i.ytimg.com/vi/${video.id}/mqdefault.jpg`;
   const number = video.views;
   let formattedNumber;
   if (number >= 1000000000) {
@@ -52,16 +50,16 @@ const SearchVideoCard = ({ video, setVideo, scrollToSong }) => {
               position: "absolute",
               right: "10px",
               bottom: "4px",
-              background: "#080B0D",
+              background: !video.duration ? "#FF0000" : "#080B0D", // Conditional background color
               opacity: 0.9,
               padding: "0 6px",
             }}
-            className="font-medium  bg-[#080B0D] text-white rounded-md  "
+            className="font-medium bg-[#080B0D] text-white rounded-md"
           >
             {video.duration ? (
               <DisplayDuration durationInSeconds={video.duration} />
             ) : (
-              "Live"
+              "• LIVE"
             )}
           </div>
         </div>
