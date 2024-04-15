@@ -1,18 +1,10 @@
 import { Bounce, Slide, ToastContainer, toast } from "react-toastify";
 import { startDownload } from "../utils";
+import { regexYTvid } from "../utils.jsx";
 
 const getVideoDlLink = async (url) => {
   let videoId;
-  const regExp =
-    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:shorts|music|watch\?[^&]*v=|embed\/|v\/)|youtu\.be\/)([\w-]{11})/i;
-  const match = url.match(regExp);
-
-  if (match && match[1]) {
-    videoId = match[1];
-  } else {
-    console.log("Failed to extract video ID from URL");
-  }
-
+  videoId = regexYTvid(url);
   try {
     const res = await fetch(`https://v4.mp3youtube.cc/api/converter`, {
       cache: "no-cache",
@@ -34,7 +26,6 @@ const getVideoDlLink = async (url) => {
     startDownload(data.url);
   } catch (e) {
     showToast("Something went wrong");
-    console.log(e);
   }
 };
 const showToast = (msg) => {

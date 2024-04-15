@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import Link from "next/link.js";
 import getVideoInfo from "../utils/getVideoInfo.js";
+import { regexYTvid } from "../utils.jsx";
 import getSearch from "../utils/getSearch.js";
 import VideoCard from "../containers/VideoCard.jsx";
 import SkeletonContainer from "../containers/SkeletonContainer.jsx";

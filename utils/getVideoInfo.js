@@ -13,7 +13,7 @@ const getVideoInfo = async (inputValue) => {
     const url = `${process.env.NEXT_PUBLIC_API_SERVER_URl}/videoInfo`;
     const videoFetch = await fetch(url, options);
     const videoInfo = await videoFetch.json();
-    console.log("api:", videoInfo);
+
     if (videoInfo.video.watchingCount > 0) {
       toast.error("Live videos can't be downloaded", {
         position: "bottom-center",

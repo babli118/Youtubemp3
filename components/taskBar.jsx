@@ -51,7 +51,7 @@ const TaskBar = ({ t }) => {
   });
   // console.log(`Current version: ${config.current_version}`)
   return (
-    <nav className="h-[50px] sm:h-[70px] w-full shadow-sm grid grid-cols-2 items-center px-5 sm:px-20 bg-white backdrop-blur-xl z-10 fixed top-0">
+    <nav className="h-[60px] sm:h-[70px] w-full shadow-sm grid grid-cols-2 items-center px-5 sm:px-20 bg-white backdrop-blur-xl z-10 fixed top-0">
       <div className="flex">
         <Link
           href={`/${t && t.lang ? t.lang : "en"}${config.splitter}${

@@ -2,6 +2,7 @@ function DurationDisplay({ durationInSeconds }) {
   // Function to convert seconds to hours, minutes, and seconds
   function convertDuration(seconds) {
     // Calculate hours
+
     const hours = Math.floor(seconds / 3600);
 
     // Calculate remaining seconds after accounting for hours

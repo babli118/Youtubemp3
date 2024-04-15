@@ -15,7 +15,7 @@ const VideoCard = ({ videoInfo, url, mp3, thumbnailUrl }) => {
 
   const getVideoLink = async (url) => {
     try {
-      const dlLinkInfo = await getVideoDlLink(url, quality);
+      const dlLinkInfo = await getVideoDlLink(url);
 
       const dlLink = dlLinkInfo.dlLink.url;
       router.push(dlLink);

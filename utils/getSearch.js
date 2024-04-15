@@ -11,10 +11,9 @@ const getVideoInfo = async (inputValue) => {
     };
 
     const url = `${process.env.NEXT_PUBLIC_API_SERVER_URl}/search`;
-    console.log(url);
+
     const videoFetch = await fetch(url, options);
     const videoInfo = await videoFetch.json();
-    console.log(videoInfo);
 
     return videoInfo;
   } catch (error) {

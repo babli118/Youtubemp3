@@ -12,8 +12,10 @@ const SearchVideoCard = ({ video, setVideo, scrollToSong }) => {
     formattedNumber = (number / 1000000000).toFixed(1) + "B";
   } else if (number >= 1000000) {
     formattedNumber = (number / 1000000).toFixed(1) + "M";
-  } else {
+  } else if (number >= 1000) {
     formattedNumber = (number / 1000).toFixed(1) + "k";
+  } else {
+    formattedNumber = number;
   }
 
   function truncateTitle(title, maxWords) {
