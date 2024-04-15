@@ -50,7 +50,10 @@ const SearchBox = ({ mp3, dl, pholder }) => {
       pastedContent.startsWith("https://www.youtube.com/") ||
       pastedContent.startsWith("https://music.youtube.com/") ||
       pastedContent.startsWith("youtube.com/") ||
-      pastedContent.startsWith("www.youtube.com/")
+      pastedContent.startsWith("www.youtube.com/") ||
+      pastedContent.startsWith("https://youtu.be") ||
+      pastedContent.startsWith("youtu.be") ||
+      pastedContent.startsWith("www.youtu.be")
     ) {
       setSearchVideos(null);
       setVideoInfo("");

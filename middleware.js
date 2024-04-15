@@ -20,7 +20,8 @@ export function middleware(request) {
     request.nextUrl.pathname === "/copyright" ||
     request.nextUrl.pathname === "/robots.txt" ||
     request.nextUrl.pathname === "/favicon.ico" ||
-    request.nextUrl.pathname.startsWith("/sitemap")
+    request.nextUrl.pathname.startsWith("/sitemap") ||
+    request.nextUrl.pathname.startsWith("/opengraph")
   ) {
     return;
   }
