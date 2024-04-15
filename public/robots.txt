@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://spotifyloader.com/
+Host: https://youtubemp3.io
 
 # Sitemaps
-Sitemap: https://spotifyloader.com/sitemap.xml
+Sitemap: https://youtubemp3.io/sitemap.xml
