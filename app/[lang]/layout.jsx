@@ -30,6 +30,9 @@ export async function generateMetadata({ params }) {
         config.site_url + lang + config.splitter + config.current_version,
       languages,
     },
+    openGraph: {
+      title: t.title,
+    },
   };
 }
 export async function generateStaticParams() {
