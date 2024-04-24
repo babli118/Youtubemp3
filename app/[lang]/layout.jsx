@@ -11,6 +11,7 @@ import { getDictionary } from "../../app/dictionaries";
 export async function generateMetadata({ params }) {
   const lang = getLang(params.lang);
   const t = await getDictionary(lang);
+
   const languages = {};
   config.lang
     .filter((lang) => lang !== "en") // Exclude 'en'
@@ -43,8 +44,9 @@ export async function generateStaticParams() {
 
 export default async function RootLayout({ children, params }) {
   const t = await getDictionary(getLang(params.lang));
+  const lang = String(getLang(params.lang));
   return (
-    <html lang={t.lang}>
+    <html lang={lang}>
       <GoogleTagManager gtmId="GTM-NRP8VP5J" />
       <body
         className={
