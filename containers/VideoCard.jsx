@@ -13,26 +13,6 @@ const VideoCard = ({ videoInfo, url, mp3, thumbnailUrl }) => {
   const [isThumbnailLoaded, setIsThumbnailLoaded] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const getVideoLink = async (url) => {
-    try {
-      const dlLinkInfo = await getVideoDlLink(url);
-
-      const dlLink = dlLinkInfo.dlLink.url;
-      router.push(dlLink);
-      setOpen(true);
-    } catch (error) {}
-  };
-
-  const getAudioLink = async (url) => {
-    try {
-      const dlLinkInfo = await getAudioDlLink(url);
-      const dlLink = dlLinkInfo.dlLink.url;
-
-      router.push(dlLink);
-      setOpen(true);
-    } catch (error) {}
-  };
-
   function truncateTitle(title, maxWords) {
     const words = title.split(" ");
     if (words.length > maxWords) {
@@ -145,7 +125,7 @@ const VideoCard = ({ videoInfo, url, mp3, thumbnailUrl }) => {
           }}
           onClick={async () => {
             setLoadingMp3(true);
-            await getAudioLink(url);
+            await getAudioDlLink(url);
             setLoadingMp3(false);
           }}
           className="bg-primary1 flex mt-2 w-[300px]  justify-center items-center gap-2 text-white text-center relative hover:scale-105 px-4  py-3 transition-all text-base font-semibold   rounded-md"
@@ -167,7 +147,7 @@ const VideoCard = ({ videoInfo, url, mp3, thumbnailUrl }) => {
           }}
           onClick={async () => {
             setLoadingMp4(true);
-            await getVideoLink(url, 720);
+            await getVideoDlLink(url);
             setLoadingMp4(false);
           }}
           className=" flex mt-2 justify-center items-center gap-2 text-white text-center relative hover:scale-105 px-4  py-3 transition-all text-base font-semibold    rounded-md"

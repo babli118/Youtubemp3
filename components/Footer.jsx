@@ -21,8 +21,8 @@ const Footer = () => {
           </p>
 
           <p className="text-primary1 mt-2">
-            © {new Date().getFullYear()} - youtubemp3
-            <span className="text-sm font-normal text-textLight"> (v1.0)</span>
+            © {new Date().getFullYear()} - youtubemp3.io
+            <span className="text-sm font-normal text-textLight"> (v1.01)</span>
           </p>
         </div>
       </div>
