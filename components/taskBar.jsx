@@ -41,7 +41,7 @@ const TaskBar = ({ t }) => {
     return (
       <Link
         key={index}
-        className="py-2 sm:py-3 px-6 cursor-pointer text-text bg-white text-sm font-medium hover:bg-background1 flex items-center active:scale-95"
+        className="py-2 sm:py-3 px-6 cursor-pointer hover:border-primary1 hover:border-solid border-background1 transition-all  border-2 rounded-md  text-text bg-white text-sm font-medium hover:bg-white flex items-center active:scale-95"
         href={`/${config.lang[index]}${config.splitter}${config.current_version}`}
       >
         <Image className="w-4 h-4 mr-2" src={flag} alt="flag"></Image>
