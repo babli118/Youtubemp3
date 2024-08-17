@@ -2,8 +2,8 @@ const config = {
   site_name: "YOUTUBEMP3",
   site_url: "https://youtubemp3.io/", // with trailing slash
   allowed_domain: "https://v4.mp3youtube.cc/",
-  current_version: "v1",
-  splitter: "-",
+  current_version: "",
+  splitter: "mp",
   lang: [
     "en",
     // "fr",

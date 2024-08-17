@@ -87,11 +87,7 @@ const VideoCard = ({ videoInfo, url, mp3, thumbnailUrl }) => {
                     alt="channel logo"
                     width={25}
                     height={20}
-                    src={
-                      video.channelThumbnails[0].url
-                        ? video.channelThumbnails[0].url
-                        : video.channelThumbnails[1].url
-                    }
+                    src={video.channelThumbnails}
                   />
                   <p
                     style={{ color: "rgb(22 19 19 / 0.7)" }}
@@ -105,11 +101,11 @@ const VideoCard = ({ videoInfo, url, mp3, thumbnailUrl }) => {
               <div style={{ color: "rgb(22 19 19 / 0.7)" }}>
                 <div style={{ margin: "0 1rem" }} className="flex gap-2 ">
                   <p>Audio Quality</p>
-                  <p className="font-semibold ">192kbps</p>
+                  <p className="font-semibold ">328kbps</p>
                 </div>
                 <div style={{ margin: "0 1rem" }} className="flex gap-2 mx-4">
                   <p>Video Quality</p>
-                  <p className="font-semibold ">720p</p>
+                  <p className="font-semibold ">1080p</p>
                 </div>
               </div>
             </div>
